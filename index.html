@@ -14,9 +14,18 @@
         <script src="js/lib/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
+        <div id="container"></div>
         <script src="js/lib/jquery-min.js"></script>
         <script src="js/lib/underscore-min.js"></script>
         <script src="js/lib/backbone-min.js"></script>
-        <script src="js/Inheritance.js"></script>
+
+        <script id="songTemplate" type="text/html">
+            <%= title %>
+            <button>Listen</button>
+            <% if(plays > 100) { %>
+                <span>Popular</span>
+            <% } %>
+        </script>
+        <script src="js/Templating.js"></script>
     </body>
 </html>
