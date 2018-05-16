@@ -1,4 +1,8 @@
-var TodoView = Backbone.View.extend({
+let myTodo = new Todo({
+    title: 'Check attributes property of the logged models in the console.'
+});
+
+let ExampleView = Backbone.View.extend({
    tagName: 'ul',
 
     className: 'Wasabi',
@@ -36,6 +40,6 @@ var TodoView = Backbone.View.extend({
 
 });
 
- var toDoView = new TodoView();
+ let toDoView = new ExampleView({model: myTodo});
 
  console.log(toDoView.el);

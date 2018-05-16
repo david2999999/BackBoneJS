@@ -1,3 +1,6 @@
+//import * as Backbone from "../lib/backbone-min";
+//import {$} from "../lib/backbone-min";
+
 var List = Backbone.Model.extend({
 
     defaults:{
