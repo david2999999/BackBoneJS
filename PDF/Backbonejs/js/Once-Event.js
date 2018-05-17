@@ -3,7 +3,7 @@ let ToDoCounter = {
     counterB: 0
 };
 
-_.extend(ToDoCounter, Backbone.Event);
+_.extend(ToDoCounter, Backbone.Events);
 
 let incrA = function () {
     ToDoCounter.counterA++;
