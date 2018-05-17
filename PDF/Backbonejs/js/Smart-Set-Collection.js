@@ -11,16 +11,16 @@ let Beatle = Backbone.Model.extend({
 });
 
 // Create models for each member of the Beatles
-var john = new Beatle({ firstName: 'John', lastName: 'Lennon'});
-var paul = new Beatle({ firstName: 'Paul', lastName: 'McCartney'});
-var george = new Beatle({ firstName: 'George', lastName: 'Harrison'});
-var ringo = new Beatle({ firstName: 'Ringo', lastName: 'Starr'});
+let john = new Beatle({ firstName: 'John', lastName: 'Lennon'});
+let paul = new Beatle({ firstName: 'Paul', lastName: 'McCartney'});
+let george = new Beatle({ firstName: 'George', lastName: 'Harrison'});
+let ringo = new Beatle({ firstName: 'Ringo', lastName: 'Starr'});
 
 // Create a collection using our models
-var theBeatles = new Backbone.Collection([john, paul, george, ringo]);
+let theBeatles = new Backbone.Collection([john, paul, george, ringo]);
 
 // Create a separate model for Pete Best
-var pete = new Beatle({ firstName: 'Pete', lastName: 'Best'});
+let pete = new Beatle({ firstName: 'Pete', lastName: 'Best'});
 
 // Update the collection
 theBeatles.set([john, paul, george, pete]);
