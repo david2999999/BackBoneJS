@@ -33,3 +33,20 @@ Backbone.history.start();
 // logs:
 // View todo requested.
 // Edit todo opened.
+
+onRoute = function(){
+    console.log("triggered from Backbone.history.on");
+};
+
+// A “route” event is also triggered on the router in addition to being fired on
+// Backbone.history.
+Backbone.history.on('route', onRoute);
+
+// Trigger 'route' event on router instance.
+myTodoRouter.on('route', function(name, args) {
+    console.log(name === 'routeEvent');
+});
+
+//location.replace('http://example.com#route-event/x');
+Backbone.history.checkUrl();
+
