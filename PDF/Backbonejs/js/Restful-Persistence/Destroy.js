@@ -19,3 +19,8 @@ todos.fetch();
 
 let todo2 = todos.get(2);
 todo2.destroy(); // sends HTTP DELETE to /todos/2 and removes from collection
+
+// Calling destroy on a Model will return false if the model isNew:
+let todo = new Backbone.Model();
+console.log(todo.destroy());
+// false
