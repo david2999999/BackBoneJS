@@ -1,4 +1,4 @@
-let app = app || {};
+var app = app || {};
 
 let TodoList = Backbone.Collection.extend({
     // Reference to this collection's model.

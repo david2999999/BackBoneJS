@@ -1,4 +1,4 @@
-let app = app || {};
+var app = app || {};
 
 app.AppView = Backbone.View.extend({
 

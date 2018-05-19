@@ -1,4 +1,4 @@
-let app = app || {};
+var app = app || {};
 
 // First, a todo has two attributes:
 // a title stores a todo item’s title and a completed status indicates if it’s complete.

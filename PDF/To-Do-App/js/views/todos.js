@@ -1,4 +1,4 @@
-let app = app || {};
+var app = app || {};
 
 app.TodoView = Backbone.View.extend({
     //... is a list tag.
