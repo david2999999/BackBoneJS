@@ -26,7 +26,7 @@ app.AppView = Backbone.View.extend({
 
         // When an add event is fired the addOne() method is called and passed the
         // new model. addOne() creates an instance of TodoView view, renders it,
-        //     and appends the resulting element to our Todo list.
+        // and appends the resulting element to our Todo list.
         this.listenTo(app.Todos, 'add', this.addOne);
 
         // When a reset event occurs (i.e., we update the collection in bulk as
