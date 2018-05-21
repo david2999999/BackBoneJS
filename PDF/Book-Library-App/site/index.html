@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Backbone.js Library</title>
     <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/south-street/jquery-ui.min.css">
 </head>
 <body>
     <div id="books">
@@ -25,16 +26,6 @@
     </div>
     <hr>
     <br><br><br><br><br>
-    <div class="bookContainer">
-        <img src="https://image.flaticon.com/icons/png/128/171/171322.png"/>
-        <ul>
-            <li>Title</li>
-            <li>Author</li>
-            <li>Release Date</li>
-            <li>Keywords</li>
-        </ul>
-        <button class="delete">Delete</button>
-    </div>
 
 
     <script id="bookTemplate" type="text/template">
@@ -42,15 +33,17 @@
         <ul>
             <li><%= title %></li>
             <li><%= author %></li>
-            <li><%= releaseDate %></li>
-            <li><%= keywords %></li>
+            <li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy' ) %></li>
+            <li><% _.each( keywords, function( keyobj ) {%> <%= keyobj.keyword %><% } ); %></li>
         </ul>
         <button class="delete">Delete</button>
     </script>
 
     <script src="js/lib/jquery-min.js"></script>
+    <script src="css/south-street/jquery-ui.js"></script>
     <script src="js/lib/underscore-min.js"></script>
     <script src="js/lib/backbone-min.js"></script>
+    <script src="js/lib/jquery-dateFormat.min.js"></script>
     <script src="js/models/book.js"></script>
     <script src="js/collections/library.js"></script>
     <script src="js/views/book.js"></script>

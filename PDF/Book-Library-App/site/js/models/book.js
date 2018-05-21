@@ -7,6 +7,14 @@ app.Book = Backbone.Model.extend({
         author: 'Unknown',
         releaseDate: 'Unknown',
         keywords: 'None'
+    },
+
+    /*Simply copy the value of _id to the needed id attribute. If you reload the page,
+    you will see that models are actually deleted on the server when you press the
+    delete button.*/
+    parse: function( response ) {
+        response.id = response._id;
+        return response;
     }
 });
 
