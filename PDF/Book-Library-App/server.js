@@ -3,7 +3,9 @@ var application_root = __dirname,
     express = require( 'express' ), //Web framework
     bodyParser = require('body-parser'), //Parser for reading request body
     path = require( 'path' ), //Utilities for dealing with file paths
-    mongoose = require( 'mongoose' ); //MongoDB integration
+    mongoose = require( 'mongoose' ), //MongoDB integration
+    methodOverride = require('method-override'),
+    errorHandler = require('express-error-handler');
 
 //Create server
 var app = express();
@@ -34,23 +36,33 @@ var Book = new mongoose.Schema({
 var BookModel = mongoose.model( 'Book', Book );
 
 // Configure server
-app.configure( function() {
-    //parses request body and populates request.body
-    app.use( express.bodyParser() );
 
-    //checks request.body for HTTP method overrides
-    app.use( express.methodOverride() );
+//parses request body and populates request.body
+app.use(bodyParser() );
 
-    //perform route lookup based on url and HTTP method
-    app.use( app.router );
+//checks request.body for HTTP method overrides
+app.use(methodOverride() );
 
-    //Where to serve static content
-    app.use( express.static( path.join( application_root, 'site') ) );
+//perform route lookup based on url and HTTP method
+//app.use( app.router );
 
-    //Show all errors in development
-    app.use( express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
+//Where to serve static content
+app.use( express.static( path.join( application_root, 'site') ) );
+
+//Show all errors in development
+app.use(errorHandler());
+
 
 app.get( '/api', function( request, response ) {
     response.send( 'Library API is running' );
+});
+
+app.get( '/api/books', function( request, response ) {
+    return BookModel.find( function( err, books ) {
+        if( !err ) {
+            return response.send( books );
+        } else {
+            return console.log( err );
+        }
+    });
 });

@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "description": "A simple library application using Backbone",
   "dependencies": {
-    "express": "4.16.3",
-    "path": "0.12.7",
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "express": "^4.16.3",
+    "express-error-handler": "^1.1.0",
+    "method-override": "^2.3.10",
     "mongoose": "5.1.1",
-    "body-parser": "1.18.3"
+    "path": "0.12.7"
   }
 }
