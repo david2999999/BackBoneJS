@@ -3,7 +3,7 @@ body {
 }
 .bookContainer {
     outline: 1px solid #aaa;
-    width: 1000px;
+    width: 500px;
     height: 130px;
     background-color: #fff;
     float: left;
