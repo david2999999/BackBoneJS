@@ -3,9 +3,9 @@ TodoMVC.module('Layout', function(Layout, App, Backbone, Marionette, $, _) {
     // ------------------
     Layout.Header = Backbone.Marionette.ItemView.extend({
         template: '#template-header',
+
         // UI Bindings create cached attributes that
         // point to jQuery selected objects.
-
         ui: {
             input: '#new-todo'
         },
