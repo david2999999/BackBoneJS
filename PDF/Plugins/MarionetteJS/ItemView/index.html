@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using ItemView</title>
+</head>
+<body>
+    <div id="content"></div>
+
+</body>
+<script type="text/html" id="my-view-template">
+    <div class="row">
+        <label>First Name:</label>
+        <span><%= firstName %></span>
+    </div>
+    <div class="row">
+        <label>Last Name:</label>
+        <span><%= lastName %></span>
+    </div>
+    <div class="row">
+        <label>Email:</label>
+        <span><%= email %></span>
+    </div>
+</script>
+
+<script src="../js/lib/jquery-min.js"></script>
+<script src="../js/lib/underscore-min.js"></script>
+<script src="../js/lib/backbone-min.js"></script>
+<script src="../js/lib/marionette/json2.js"></script>
+<script src="../js/lib/marionette/backbone.radio.js"></script>
+<script src="../js/lib/marionette/backbone.marionette.min.js"></script>
+<script src="item-view.js"></script>
+</html>
